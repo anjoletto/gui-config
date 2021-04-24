@@ -1,0 +1,51 @@
+# ------------------------------------------------------------ #
+# default programs for every wm
+# ------------------------------------------------------------ #
+super + space
+  rofi --combi-modi drun,window,run,ssh -show combi
+
+super + control + space
+  dmenu_run
+
+super + Return
+  alacritty
+
+super + Escape
+  i3lock -c 000000 -e -f
+#  xscreensaver-command -lock
+# ------------------------------------------------------------ #
+
+# ------------------------------------------------------------ #
+# screenshots
+# ------------------------------------------------------------ #
+Print
+  scrot -q 100 -z -s
+
+super + Print
+  scrot -q 100 -z -u
+
+super + shift + Print
+  scrot -q 100 -z
+# ------------------------------------------------------------ #
+
+# ------------------------------------------------------------ #
+# multimedia keys
+# ------------------------------------------------------------ #
+XF86Audio{Prev,Next}
+ playerctl {previous,next} 
+
+XF86AudioPlay
+  playerctl play-pause
+
+XF86AudioMute
+  amixer sset Master toggle
+
+XF86Audio{Raise,Lower}Volume
+  amixer sset Master 5%{+,-} unmute
+
+XF86MonBrightness{Up,Down}
+  sudo light -{U,A} 5
+
+XF86Search
+  poweroff
+# ------------------------------------------------------------ #
