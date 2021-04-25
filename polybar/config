@@ -34,7 +34,7 @@ monitor = HDMI-1
 
 ; ---------------------------------------------------------------------------- ;
 [colors]
-background = #2E3440
+background = #002E3440
 foreground = #D8DEE9
 fg-alt = #ECEFF4
 
@@ -50,7 +50,7 @@ bad = #BF616A
 
 ; ---------------------------------------------------------------------------- ;
 [bar/barbase]
-height = 30
+height = 35
 fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -62,12 +62,15 @@ padding-left = 0
 padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
-font-0 = "Fira Mono:size=12"
-font-1 = "Font Awesome 5 Free Solid:syle=Regular:size=12"
-font-2 = "Font Awesome 5 Free Regular:syle=Regular:size=12"
-font-3 = "Font Awesome 5 Brands Regular:syle=Regular:size=12"
+
+font-0 = "Fira Mono:size=13"
+font-1 = "Font Awesome 5 Free Solid:syle=Regular:size=13"
+font-2 = "Font Awesome 5 Free Regular:syle=Regular:size=13"
+font-3 = "Font Awesome 5 Brands Regular:syle=Regular:size=13"
+
 modules-center = temperature cpu memory nvm hd eth wifi battery 
 modules-right = volume uptime date
+
 tray-position = right
 tray-padding = 2
 cursor-click = pointer
@@ -214,7 +217,7 @@ ramp-used-9-foreground = ${colors.bad}
 [module/date]
 type = internal/date
 interval = 1
-date = %Y.%m.%d
+date-alt = %Y.%m.%d
 time = %H:%M:%S
 label = %date% %time%
 label-foreground = ${colors.normal}
@@ -224,7 +227,7 @@ label-foreground = ${colors.normal}
 [module/uptime]
 type = custom/script
 exec = uptime | awk -F, '{sub(".*up ",x,$1);print $1}'
-interval = 30
+interval = 10
 label = %output%
 label-foreground = ${colors.normal}
 ; ---------------------------------------------------------------------------- ;
@@ -232,15 +235,14 @@ label-foreground = ${colors.normal}
 ; ---------------------------------------------------------------------------- ;
 [module/volume]
 type = internal/pulseaudio
-interval = 60
 use-ui-max = true
 
-format-volume = <ramp-volume> <label-volume> 
+format-volume = <label-volume> <ramp-volume>
 label-volume = %percentage:3%% 
 label-volume-foreground = ${colors.normal}
 format-volume-margin = 1
 
-label-muted =  %percentage:3%%
+label-muted = %percentage:3%% 
 label-muted-foreground = ${colors.bad}
 
 ramp-volume-0 = 
@@ -265,7 +267,7 @@ poll-internval = 10
 time-format = %H:%M
 
 format-full = <label-full>
-label-full =  
+label-full =   (100%)
 label-full-foreground = ${colors.normal}
 
 format-charging = <ramp-capacity> (<label-charging>)
