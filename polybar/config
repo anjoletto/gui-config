@@ -34,7 +34,8 @@ monitor = HDMI-1
 
 ; ---------------------------------------------------------------------------- ;
 [colors]
-background = #002E3440
+background = #2E3440
+transparent = #00000000
 foreground = #D8DEE9
 fg-alt = #ECEFF4
 
@@ -52,16 +53,17 @@ bad = #BF616A
 [bar/barbase]
 height = 35
 fixed-center = true
-background = ${colors.background}
+background = ${colors.transparent}
 foreground = ${colors.foreground}
+
 line-size = 3
-line-color = #f00
+line-color = ${colors.transparent}
 border-size = 0
-border-color = #00000000
-padding-left = 0
-padding-right = 0
-module-margin-left = 1
-module-margin-right = 1
+border-color = ${colors.transparent}
+
+padding = 0
+
+module-margin = 1
 
 font-0 = "Fira Mono:size=13"
 font-1 = "Font Awesome 5 Free Solid:syle=Regular:size=13"
@@ -73,6 +75,7 @@ modules-right = volume uptime date
 
 tray-position = right
 tray-padding = 2
+
 cursor-click = pointer
 cursor-scroll = ns-resize
 ; ---------------------------------------------------------------------------- ;
@@ -97,16 +100,35 @@ label-empty-foreground = ${colors.normal}
 ; ---------------------------------------------------------------------------- ;
 [module/i3]
 type = internal/i3
-pin-workspaces = true
+pin-workspaces = false
 strip-wmnumbers = true
 index-sort = true
 enable-click = true
 
-label-active-foreground = ${colors.foreground}
-label-focused-foreground = ${colors.foreground}
+label-active = %index%
+label-active-padding = 1
+label-active-foreground = ${colors.normal}
+label-active-underline = ${colors.normal}
+
+label-visible = %index%
+label-visible-padding = 1
+label-visible-foreground = ${colors.goodish}
+label-visible-underline = ${colors.goodish}
+
+label-focused = %index%
+label-focused-padding = 1
+label-focused-foreground = ${colors.good}
+label-focused-underline = ${colors.good}
+
+label-unfocused = %index%
+label-unfocused-padding = 1
 label-unfocused-foreground = ${colors.unfocused}
-label-urgent-foreground = ${colors.foreground}
-label-urgent-background = ${colors.alert}
+label-unfocused-underline = ${colors.unfocused}
+
+label-urgent = %index%
+label-urgent-padding = 1
+label-urgent-foreground = ${colors.alert}
+label-urgent-underline = ${colors.alert}
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
