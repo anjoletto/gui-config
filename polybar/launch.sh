@@ -1,5 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 killall -r -q polybar
-polybar --reload i3-monitor0 &
-polybar --reload i3-monitor1 &
+
+for monitor in $(xrandr --query | grep " connected" | cut -d" " -f1);
+do
+  MONITOR=$monitor polybar --reload i3 &
+done
