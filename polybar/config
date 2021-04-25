@@ -321,18 +321,37 @@ ramp-4-foreground = ${colors.bad}
 ; ---------------------------------------------------------------------------- ;
 [module/eth]
 type = internal/network
-interfaces = enp1s0
+interface = enp1s0
+
+format-connected = <label-connected>
+label-connected =  
+label-connected-foreground = ${colors.good}
+
+format-disconnected = <label-disconnected>
+label-disconnected =  
+label-disconnected-foreground = ${colors.bad}
 ; ---------------------------------------------------------------------------- ;
 [module/wifi]
 type = internal/network
-interfaces = wlo1
+interface = wlo1
 interval = 1
 
-format-connected = <label-connected>
-label-connected = %essid%
+format-connected = <ramp-signal>
+ramp-signal-0 =  
+ramp-signal-1 =  
+ramp-signal-2 =  
+ramp-signal-3 =  
+ramp-signal-4 =  
 
-format-disconnected = <label-connected>
-label-disconnected = %ifname%
+ramp-signal-0-foreground = ${colors.bad}
+ramp-signal-1-foreground = ${colors.badish}
+ramp-signal-2-foreground = ${colors.goodish}
+ramp-signal-3-foreground = ${colors.good}
+ramp-signal-4-foreground = ${colors.good}
+
+format-disconnected = <label-disconnected>
+label-disconnected =  
+label-disconnected-foreground = ${colors.bad}
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
