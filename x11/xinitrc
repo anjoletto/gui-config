@@ -1,8 +1,6 @@
-setxkbmap -layout us -variant altgr-intl -option ctrl:nocaps
-xkbcomp -I$HOME/.config/kbd ~/.config/kbd/keymap/custom :0
-xcape -e "Control_L=Escape"
-
-nm-applet &
+$HOME/.config/kbd/keyboard &
+nm-applet --sm-disable --indicator &
 sxhkd &
 autorandr --change
+picom &
 i3
