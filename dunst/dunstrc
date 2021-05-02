@@ -9,7 +9,7 @@ idle_threshold = 120       # keep notifications if user is idle more than 120s
 # ---------------------------------------------------------------------------- #
 # notification window
 # ---------------------------------------------------------------------------- #
-geometry = "400x5-0+40" # width x quantity x-offset y-offset
+geometry = "400x5-15+45" # width x quantity x-offset y-offset
 notification_height = 0 # window height 0 will make it fit notification
 shrink = yes            # same, but horizontally
 transparency = 5        # can see window below and still read notification
