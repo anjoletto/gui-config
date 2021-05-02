@@ -355,7 +355,7 @@ label-disconnected-foreground = ${colors.bad}
 ; ---------------------------------------------------------------------------- ;
 [module/wifi]
 type = internal/network
-interface = wlan0
+interface = wlo0
 interval = 1
 
 format-connected = <ramp-signal>
