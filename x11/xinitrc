@@ -1,6 +1,4 @@
-$HOME/.config/kbd/keyboard &
-nm-applet --sm-disable --indicator &
+$HOME/.config/kbd/setup &
 sxhkd &
 autorandr --change
-picom &
-i3
+#i3
