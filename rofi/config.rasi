@@ -4,7 +4,7 @@ configuration {
 	/* modes config                                                             */
 	/* ------------------------------------------------------------------------ */
 
-	modi: "drun,run,window";
+	modi: "drun,run,window,combi";
 	disable-history: true;
 	kb-cancel: "Escape";
 
