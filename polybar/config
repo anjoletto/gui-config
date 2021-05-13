@@ -319,14 +319,14 @@ ramp-capacity-4-foreground = ${colors.good}
 type = internal/temperature
 interval = 10
 thermal-zone = 6
-base-temperature = 40
+base-temperature = 60
 warn-temperature = 90
 
 format = <ramp> <label>
 label = %temperature-c:04%
 label-foreground = ${colors.normal}
 
-format-warn = <ramp>
+format-warn = <ramp> <label-warn>
 label-warn = %temperature-c:04%
 label-warn-foreground = ${colors.bad}
 
@@ -335,12 +335,14 @@ ramp-1 = 
 ramp-2 = 
 ramp-3 = 
 ramp-4 = 
+ramp-5 = 
 
 ramp-0-foreground = ${colors.normal}
 ramp-1-foreground = ${colors.good}
 ramp-2-foreground = ${colors.goodish}
 ramp-3-foreground = ${colors.badish}
-ramp-4-foreground = ${colors.bad}
+ramp-4-foreground = ${colors.badish}
+ramp-5-foreground = ${colors.bad}
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
