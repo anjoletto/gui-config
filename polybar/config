@@ -56,11 +56,13 @@ bad = #BF616A
 ;bottom = true
 height = 35
 fixed-center = true
-background = ${colors.transparent}
+background = ${colors.background}
+#background = ${colors.transparent}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = ${colors.transparent}
+line-color = ${colors.background}
+#line-color = ${colors.transparent}
 border-size =  q
 border-color = ${colors.bg-alt}
 
@@ -230,11 +232,11 @@ ramp-used-0-foreground = ${colors.normal}
 ramp-used-1-foreground = ${colors.normal}
 ramp-used-2-foreground = ${colors.good}
 ramp-used-3-foreground = ${colors.good}
-ramp-used-4-foreground = ${colors.good}
+ramp-used-4-foreground = ${colors.goodish}
 ramp-used-5-foreground = ${colors.goodish}
-ramp-used-6-foreground = ${colors.goodish}
+ramp-used-6-foreground = ${colors.badish}
 ramp-used-7-foreground = ${colors.badish}
-ramp-used-8-foreground = ${colors.badish}
+ramp-used-8-foreground = ${colors.bad}
 ramp-used-9-foreground = ${colors.bad}
 ; ---------------------------------------------------------------------------- ;
 
