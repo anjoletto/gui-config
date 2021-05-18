@@ -11,7 +11,7 @@ super + Return
   alacritty
 
 super + Escape
-  i3lock -c 000000 -e -f
+  dunstctl set-paused true; i3lock -c 000000 -e -f
 #  xscreensaver-command -lock
 # ------------------------------------------------------------ #
 
@@ -42,6 +42,9 @@ XF86AudioMute
 
 XF86Audio{Raise,Lower}Volume
   amixer sset Master 1%{+,-} unmute
+
+shift + XF86Audio{Raise,Lower}Volume
+  amixer sset Master 5%{+,-} unmute
 
 XF86MonBrightness{Up,Down}
   sudo light -{U,A} 5
