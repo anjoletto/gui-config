@@ -40,10 +40,10 @@ XF86AudioPlay
 XF86AudioMute
   amixer sset Master toggle
 
-XF86Audio{Raise,Lower}Volume
+shift + XF86Audio{Raise,Lower}Volume
   amixer sset Master 1%{+,-} unmute
 
-shift + XF86Audio{Raise,Lower}Volume
+XF86Audio{Raise,Lower}Volume
   amixer sset Master 5%{+,-} unmute
 
 XF86MonBrightness{Up,Down}
