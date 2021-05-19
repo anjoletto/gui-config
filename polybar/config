@@ -75,7 +75,7 @@ font-1 = "Font Awesome 5 Free Solid:syle=Regular:size=13"
 font-2 = "Font Awesome 5 Free Regular:syle=Regular:size=13"
 font-3 = "Font Awesome 5 Brands Regular:syle=Regular:size=13"
 
-modules-center = temperature cpu memory nvme hd eth wifi battery 
+modules-center = temperature cpu ram mem1 mem2 eth wifi battery 
 modules-right = volume uptime date
 
 tray-position = right
@@ -137,31 +137,7 @@ label-urgent-underline = ${colors.alert}
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
-[module/hd]
-type = internal/fs
-mount-0 = /var/lib/docker
-interval = 10
-
-format-mounted = <ramp-capacity>
-;format-mounted = <ramp-capacity> <label-mounted>
-label-mounted = %free:02%
-label-mounted-foreground = ${colors.normal}
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-
-ramp-capacity-0-foreground = ${colors.bad}
-ramp-capacity-1-foreground = ${colors.badish}
-ramp-capacity-2-foreground = ${colors.goodish}
-ramp-capacity-3-foreground = ${colors.good}
-ramp-capacity-4-foreground = ${colors.normal}
-
-label-unmounted = 
-label-unmounted-foreground = ${colors.bad} 
-; ---------------------------------------------------------------------------- ;
-[module/nvme]
+[module/mem1]
 type = internal/fs
 mount-0 = /
 interval = 10
@@ -183,6 +159,30 @@ ramp-capacity-3-foreground = ${colors.good}
 ramp-capacity-4-foreground = ${colors.normal}
 
 label-unmounted = 
+label-unmounted-foreground = ${colors.bad} 
+; ---------------------------------------------------------------------------- ;
+[module/mem2]
+type = internal/fs
+mount-0 = /var/lib/docker
+interval = 10
+
+format-mounted = <ramp-capacity>
+;format-mounted = <ramp-capacity> <label-mounted>
+label-mounted = %free:02%
+label-mounted-foreground = ${colors.normal}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+ramp-capacity-0-foreground = ${colors.bad}
+ramp-capacity-1-foreground = ${colors.badish}
+ramp-capacity-2-foreground = ${colors.goodish}
+ramp-capacity-3-foreground = ${colors.good}
+ramp-capacity-4-foreground = ${colors.normal}
+
+label-unmounted = 
 label-unmounted-foreground = ${colors.bad} 
 ; ---------------------------------------------------------------------------- ;
 
@@ -212,7 +212,7 @@ ramp-coreload-4-foreground = ${colors.bad}
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
-[module/memory]
+[module/ram]
 type = internal/memory
 interval = 10
 
