@@ -333,7 +333,7 @@ format = <ramp>
 label = %temperature-c:04%
 label-foreground = ${colors.normal}
 
-format-warn = <ramp> <label-warn>
+format-warn = <ramp>
 label-warn = %temperature-c:04%
 label-warn-foreground = ${colors.bad}
 
