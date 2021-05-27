@@ -75,8 +75,8 @@ font-1 = "Font Awesome 5 Free Solid:syle=Regular:size=11"
 font-2 = "Font Awesome 5 Free Regular:syle=Regular:size=11"
 font-3 = "Font Awesome 5 Brands Regular:syle=Regular:size=11"
 
-modules-center = temperature cpu ram mem1 mem2 eth wifi battery 
-modules-right = volume uptime date
+modules-center = temperature cpu ram mem1 mem2
+modules-right = battery volume uptime date
 
 tray-position = right
 tray-padding = 2
@@ -226,22 +226,12 @@ ramp-used-1 = 
 ramp-used-2 = 
 ramp-used-3 = 
 ramp-used-4 = 
-ramp-used-5 = 
-ramp-used-6 = 
-ramp-used-7 = 
-ramp-used-8 = 
-ramp-used-9 = 
 
 ramp-used-0-foreground = ${colors.normal}
-ramp-used-1-foreground = ${colors.normal}
-ramp-used-2-foreground = ${colors.good}
-ramp-used-3-foreground = ${colors.good}
-ramp-used-4-foreground = ${colors.goodish}
-ramp-used-5-foreground = ${colors.goodish}
-ramp-used-6-foreground = ${colors.badish}
-ramp-used-7-foreground = ${colors.badish}
-ramp-used-8-foreground = ${colors.bad}
-ramp-used-9-foreground = ${colors.bad}
+ramp-used-1-foreground = ${colors.good}
+ramp-used-2-foreground = ${colors.goodish}
+ramp-used-3-foreground = ${colors.badish}
+ramp-used-4-foreground = ${colors.bad}
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
@@ -301,10 +291,10 @@ format-full = <label-full>
 label-full =  
 label-full-foreground = ${colors.normal}
 
-format-charging = <ramp-capacity> (<label-charging>)
+format-charging = (<label-charging>) <ramp-capacity>
 label-charging = %time%
 
-format-discharging = <ramp-capacity> (<label-discharging>)
+format-discharging = (<label-discharging>) <ramp-capacity>
 label-discharging = %time%
 
 ramp-capacity-0 = 
@@ -318,6 +308,7 @@ ramp-capacity-1-foreground = ${colors.badish}
 ramp-capacity-2-foreground = ${colors.goodish}
 ramp-capacity-3-foreground = ${colors.good}
 ramp-capacity-4-foreground = ${colors.good}
+
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
