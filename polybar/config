@@ -138,8 +138,8 @@ type = internal/fs
 mount-0 = /
 interval = 10
 
-format-mounted = <ramp-capacity>
-;format-mounted = <ramp-capacity> <label-mounted>
+;format-mounted = <ramp-capacity>
+format-mounted = <ramp-capacity> <label-mounted>
 label-mounted = %free:02%
 label-mounted-foreground = ${colors.normal}
 ramp-capacity-0 = 
@@ -162,8 +162,8 @@ type = internal/fs
 mount-0 = /var/lib/docker
 interval = 10
 
-format-mounted = <ramp-capacity>
-;format-mounted = <ramp-capacity> <label-mounted>
+;format-mounted = <ramp-capacity>
+format-mounted = <ramp-capacity> <label-mounted>
 label-mounted = %free:02%
 label-mounted-foreground = ${colors.normal}
 ramp-capacity-0 = 
@@ -186,8 +186,8 @@ label-unmounted-foreground = ${colors.bad}
 [module/cpu]
 type = internal/cpu
 interval = 1
-format = <ramp-coreload>
-;format = <ramp-coreload> <label>
+;format = <ramp-coreload>
+format = <ramp-coreload> <label>
 label = %percentage-sum:03%%
 label-foreground = ${colors.normal}
 
@@ -212,8 +212,8 @@ ramp-coreload-4-foreground = ${colors.bad}
 type = internal/memory
 interval = 10
 
-format = <ramp-used>
-;format = <ramp-used> <label>
+;format = <ramp-used>
+format = <ramp-used> <label>
 label = %gb_free:05%
 label-foreground = ${colors.normal}
 
@@ -315,8 +315,8 @@ thermal-zone = 6
 base-temperature = 60
 warn-temperature = 90
 
-format = <ramp>
-;format = <ramp> <label>
+;format = <ramp>
+format = <ramp> <label>
 label = %temperature-c:04%
 label-foreground = ${colors.normal}
 
