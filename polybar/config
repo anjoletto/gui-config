@@ -23,7 +23,6 @@ tail = true
 
 [bar/i3]
 inherit = bar/barbase
-modules-left = i3
 monitor = ${env:MONITOR:}
 
 [bar/qtile]
@@ -75,6 +74,7 @@ font-1 = "Font Awesome 5 Free Solid:syle=Regular:size=11"
 font-2 = "Font Awesome 5 Free Regular:syle=Regular:size=11"
 font-3 = "Font Awesome 5 Brands Regular:syle=Regular:size=11"
 
+modules-left = i3
 modules-center = temperature cpu ram mem1 mem2
 modules-right = battery volume uptime date
 
@@ -238,7 +238,7 @@ ramp-used-4-foreground = ${colors.bad}
 [module/date]
 type = internal/date
 interval = 1
-date = %Y.%m.%d
+date-alt = %Y.%m.%d
 time = %H:%M:%S
 label = %date% %time%
 label-foreground = ${colors.normal}
