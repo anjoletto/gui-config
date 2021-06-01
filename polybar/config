@@ -71,7 +71,7 @@ font-2 = "Font Awesome 5 Free Regular:syle=Regular:size=13"
 font-3 = "Font Awesome 5 Brands Regular:syle=Regular:size=13"
 
 modules-left = i3
-modules-center = temperature cpu ram mem1 mem2
+modules-center = temperature cpu ram nvm1 nvm2
 modules-right = battery volume uptime date
 
 tray-position = right
@@ -133,7 +133,7 @@ label-urgent-underline = ${colors.alert}
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
-[module/mem1]
+[module/nvm1]
 type = internal/fs
 mount-0 = /
 interval = 10
@@ -157,7 +157,7 @@ ramp-capacity-4-foreground = ${colors.normal}
 label-unmounted = 
 label-unmounted-foreground = ${colors.bad} 
 ; ---------------------------------------------------------------------------- ;
-[module/mem2]
+[module/nvm2]
 type = internal/fs
 mount-0 = /var/lib/docker
 interval = 10
