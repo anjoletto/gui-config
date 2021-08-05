@@ -15,21 +15,21 @@ super + Escape
 #  dunstctl set-paused true; i3lock -c 000000 -e -f
 #  xscreensaver-command -lock
 
-super + n
-  dunstctl set-paused toggle
+#super + n
+#  dunstctl set-paused toggle
 # ------------------------------------------------------------ #
 
 # ------------------------------------------------------------ #
 # screenshots
 # ------------------------------------------------------------ #
 Print
-  scrot -q 100 -z -s
+  scrot -q 100 -z -s -e 'mv $f ~/screenshots/'
 
 super + Print
-  scrot -q 100 -z -u
+  scrot -q 100 -z -u -e 'mv $f ~/screenshots/'
 
 super + shift + Print
-  scrot -q 100 -z
+  scrot -q 100 -z -e 'mv $f ~/screenshots/'
 # ------------------------------------------------------------ #
 
 # ------------------------------------------------------------ #
@@ -50,8 +50,11 @@ shift + XF86Audio{Raise,Lower}Volume
 XF86Audio{Raise,Lower}Volume
   amixer sset Master 5%{+,-} unmute
 
+control + XF86AudioRaiseVolume
+  changeVolume.sh 5%+
+
 XF86MonBrightness{Up,Down}
-  sudo light -{U,A} 5
+  doas light -{A,U} 5
 
 XF86Search
   poweroff
