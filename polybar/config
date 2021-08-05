@@ -288,10 +288,10 @@ format-full = <label-full>
 label-full =  
 label-full-foreground = ${colors.normal}
 
-format-charging = (<label-charging>) <ramp-capacity>
+format-charging = (+ <label-charging>) <ramp-capacity>
 label-charging = %time%
 
-format-discharging = (<label-discharging>) <ramp-capacity>
+format-discharging = (- <label-discharging>) <ramp-capacity>
 label-discharging = %time%
 
 ramp-capacity-0 = 
