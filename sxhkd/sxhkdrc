@@ -45,13 +45,12 @@ XF86AudioMute
   amixer sset Master toggle
 
 shift + XF86Audio{Raise,Lower}Volume
-  amixer sset Master 1%{+,-} unmute
+  pamixer -{i,d} 1
+  #amixer sset Master 1%{+,-} unmute
 
 XF86Audio{Raise,Lower}Volume
-  amixer sset Master 5%{+,-} unmute
-
-control + XF86AudioRaiseVolume
-  changeVolume.sh 5%+
+  pamixer -{i,d} 5
+  #amixer sset Master 5%{+,-} unmute
 
 XF86MonBrightness{Up,Down}
   doas light -{A,U} 5
