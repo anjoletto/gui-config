@@ -29,7 +29,7 @@ monitor = ${env:MONITOR:}
 ; ---------------------------------------------------------------------------- ;
 [colors]
 background = #2E3440
-transparent = #00000000
+transparent = #2E344000
 foreground = #D8DEE9
 fg-alt = #ECEFF4
 bg-alt = #4C566A
@@ -49,7 +49,7 @@ bad = #BF616A
 ; ---------------------------------------------------------------------------- ;
 [bar/barbase]
 ;bottom = true
-height = 30
+height = 25
 fixed-center = true
 background = ${colors.background}
 #background = ${colors.transparent}
@@ -65,13 +65,13 @@ padding = 0
 
 module-margin = 1
 
-font-0 = "Fira Code:size=13"
-font-1 = "Font Awesome 5 Free Solid:syle=Regular:size=13"
-font-2 = "Font Awesome 5 Free Regular:syle=Regular:size=13"
-font-3 = "Font Awesome 5 Brands Regular:syle=Regular:size=13"
+font-0 = "Fira Code:size=12"
+font-1 = "Font Awesome 5 Free Solid:syle=Regular:size=12"
+font-2 = "Font Awesome 5 Free Regular:syle=Regular:size=12"
+font-3 = "Font Awesome 5 Brands Regular:syle=Regular:size=12"
 
 modules-left = i3
-modules-center = temperature cpu ram nvm1 nvm2
+modules-center = temperature cpu ram swap nvm1 nvm2
 modules-right = battery volume uptime date
 
 tray-position = right
@@ -228,6 +228,38 @@ ramp-used-1-foreground = ${colors.good}
 ramp-used-2-foreground = ${colors.goodish}
 ramp-used-3-foreground = ${colors.badish}
 ramp-used-4-foreground = ${colors.bad}
+; ---------------------------------------------------------------------------- ;
+[module/swap]
+type = internal/memory
+interval = 10
+
+;format = <ramp-used>
+format = <ramp-used> <label>
+label = %gb_swap_free:05%
+label-foreground = ${colors.normal}
+
+ramp-used-0 = 
+ramp-used-1 = 
+ramp-used-2 = 
+ramp-used-3 = 
+ramp-used-4 = 
+ramp-used-5 = 
+ramp-used-6 = 
+ramp-used-7 = 
+ramp-used-8 = 
+ramp-used-9 = 
+
+
+ramp-used-0-foreground = ${colors.normal}
+ramp-used-1-foreground = ${colors.normal}
+ramp-used-2-foreground = ${colors.normal}
+ramp-used-3-foreground = ${colors.good}
+ramp-used-4-foreground = ${colors.good}
+ramp-used-5-foreground = ${colors.goodish}
+ramp-used-6-foreground = ${colors.goodish}
+ramp-used-7-foreground = ${colors.badish}
+ramp-used-8-foreground = ${colors.badish}
+ramp-used-9-foreground = ${colors.bad}
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
