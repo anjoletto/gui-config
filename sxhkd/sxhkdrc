@@ -42,7 +42,8 @@ XF86AudioPlay
   playerctl play-pause
 
 XF86AudioMute
-  amixer sset Master toggle
+  pamixer -t
+  #amixer sset Master toggle
 
 shift + XF86Audio{Raise,Lower}Volume
   pamixer -{i,d} 1
@@ -56,5 +57,5 @@ XF86MonBrightness{Up,Down}
   doas light -{A,U} 5
 
 XF86Search
-  poweroff
+  alacritty
 # ------------------------------------------------------------ #
