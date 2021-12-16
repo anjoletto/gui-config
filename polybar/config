@@ -267,8 +267,8 @@ ramp-used-9-foreground = ${colors.bad}
 [module/date]
 type = internal/date
 interval = 1
-date-alt = %Y.%m.%d
-time = %H:%M:%S
+date-alt = %H:%M:%S
+time = %Y.%m.%d %H:%M:%S
 label = %date% %time%
 label-foreground = ${colors.normal}
 ; ---------------------------------------------------------------------------- ;
