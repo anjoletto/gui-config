@@ -9,4 +9,5 @@ ln -s $(pwd)/autorandr $HOME/.config/autorandr
 
 ln -s $(pwd)/x11/xresources $HOME/.Xresources
 ln -s $(pwd)/x11/user-dirs.dirs $HOME/.config/user-dirs.dirs
+ln -s $(pwd)/gtk-4.0 $HOME/.config/gtk-4.0
 #ln -s $(pwd)/x11/xinitrc $HOME/.xinitrc
