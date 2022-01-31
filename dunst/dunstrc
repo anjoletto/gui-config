@@ -55,8 +55,8 @@ show_age_threshold = 60     # show age of messages after 60 seconds
 [shortcuts]
 close = ctrl+shift+space
 close_all = ctrl+space
-history = ctrl+period
-context = ctrl+shift+period
+history = ctrl+esc
+context = ctrl+shift+comma
 # ---------------------------------------------------------------------------- #
 
 # ---------------------------------------------------------------------------- #
