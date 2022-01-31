@@ -72,7 +72,7 @@ font-3 = "Font Awesome 5 Brands Regular:syle=Regular:size=12"
 
 modules-left = i3
 modules-center = temperature cpu ram nvm1 nvm2
-modules-right = battery volume uptime date
+modules-right = battery mic volume uptime date
 
 tray-position = right
 tray-padding = 1
@@ -307,6 +307,14 @@ ramp-volume-1-foreground = ${colors.good}
 ramp-volume-2-foreground = ${colors.goodish}
 ramp-volume-3-foreground = ${colors.badish}
 ramp-volume-4-foreground = ${colors.bad}
+; ---------------------------------------------------------------------------- ;
+
+; ---------------------------------------------------------------------------- ;
+[module/mic]
+type=custom/script
+exec = $HOME/.config/polybar/mic_status.sh
+interval = 1
+click-left = pamixer --default-source -t
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
