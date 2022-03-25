@@ -18,7 +18,7 @@ configuration {
 	padding: 13;
 
 	width: 50;
-	lines: 5;
+	lines: 10;
 	bw: 3;
 	location: 0;
 
