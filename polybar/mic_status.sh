@@ -1,6 +1,6 @@
 #! /usr/bin/env sh
 
-MUTED=$(pamixer --default --get-mute)
+MUTED=$(pamixer --default-source --get-mute 2> /dev/null)
 
 if $MUTED; then
   echo ""

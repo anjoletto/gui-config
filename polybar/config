@@ -71,7 +71,7 @@ font-2 = "Font Awesome 5 Free Regular:syle=Regular:size=12"
 font-3 = "Font Awesome 5 Brands Regular:syle=Regular:size=12"
 
 modules-left = i3
-modules-center = temperature cpu ram nvm1 nvm2
+modules-center = temperature cpu ram swap nvm1 nvm2
 modules-right = battery mic volume uptime date
 
 tray-position = right
@@ -215,7 +215,7 @@ interval = 10
 
 ;format = <ramp-used>
 format = <ramp-used> <label>
-label = %gb_free:05%
+label = %percentage_free:02%%
 label-foreground = ${colors.normal}
 
 ramp-used-0 = 
@@ -236,7 +236,7 @@ interval = 10
 
 ;format = <ramp-used>
 format = <ramp-used> <label>
-label = %gb_swap_free:05%
+label = %percentage_swap_free:02%%
 label-foreground = ${colors.normal}
 
 ramp-used-0 = 
@@ -250,15 +250,14 @@ ramp-used-7 = 
 ramp-used-8 = 
 ramp-used-9 = 
 
-
 ramp-used-0-foreground = ${colors.normal}
 ramp-used-1-foreground = ${colors.normal}
 ramp-used-2-foreground = ${colors.normal}
-ramp-used-3-foreground = ${colors.good}
-ramp-used-4-foreground = ${colors.good}
-ramp-used-5-foreground = ${colors.goodish}
+ramp-used-3-foreground = ${colors.normal}
+ramp-used-4-foreground = ${colors.normal}
+ramp-used-5-foreground = ${colors.good}
 ramp-used-6-foreground = ${colors.goodish}
-ramp-used-7-foreground = ${colors.badish}
+ramp-used-7-foreground = ${colors.goodish}
 ramp-used-8-foreground = ${colors.badish}
 ramp-used-9-foreground = ${colors.bad}
 ; ---------------------------------------------------------------------------- ;
@@ -268,9 +267,11 @@ ramp-used-9-foreground = ${colors.bad}
 type = internal/date
 interval = 1
 date-alt = %H:%M:%S
-time = %Y.%m.%d %H:%M:%S
+date = %Y.%m.%d
+time = %H:%M:%S
 label = %date% %time%
 label-foreground = ${colors.normal}
+format = <label>
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
@@ -307,6 +308,8 @@ ramp-volume-1-foreground = ${colors.good}
 ramp-volume-2-foreground = ${colors.goodish}
 ramp-volume-3-foreground = ${colors.badish}
 ramp-volume-4-foreground = ${colors.bad}
+
+click-right = pavucontrol
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
@@ -315,6 +318,7 @@ type=custom/script
 exec = $HOME/.config/polybar/mic_status.sh
 interval = 1
 click-left = pamixer --default-source -t
+click-right = pavucontrol
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
