@@ -15,8 +15,8 @@ super + Escape
 #  dunstctl set-paused true; i3lock -c 000000 -e -f
 #  xscreensaver-command -lock
 
-super + n
-  dunstctl set-paused toggle
+#super + n
+#  dunstctl set-paused toggle
 # ------------------------------------------------------------ #
 
 # ------------------------------------------------------------ #
