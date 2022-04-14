@@ -2,7 +2,7 @@
 # default programs for every wm
 # ------------------------------------------------------------ #
 super + space
-  rofi --combi-modi drun,window -show combi
+  rofi -show combi
 
 super + control + space
   dmenu_run
