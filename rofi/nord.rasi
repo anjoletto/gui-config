@@ -82,7 +82,7 @@
     text-color: @aurora1;
 }
 #element.alternate.active {
-    text-color: @aurora5;
+    text-color: @aurora4;
 }
 #element.selected.normal {
     text-color: @frost4;
@@ -91,7 +91,7 @@
     text-color: @aurora2;
 }
 #element.selected.active {
-    text-color: @fg1;
+    text-color: @frost4;
 }
 #scrollbar {
     handle-color: @bg1;
