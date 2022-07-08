@@ -71,7 +71,7 @@ font-2 = "Font Awesome 5 Free Regular:syle=Regular:size=12"
 font-3 = "Font Awesome 5 Brands Regular:syle=Regular:size=12"
 
 modules-left = i3
-modules-center = temperature cpu ram nvm2
+modules-center = temperature cpu ram disk0
 modules-right = battery volume uptime date
 
 tray-position = right
@@ -134,43 +134,9 @@ label-urgent-underline = ${colors.alert}
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
-[module/nvm1]
+[module/disk0]
 type = internal/fs
 mount-0 = /
-interval = 10
-
-;format-mounted = <ramp-capacity>
-format-mounted = <ramp-capacity> <label-mounted>
-label-mounted = %free:02%
-label-mounted-foreground = ${colors.normal}
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-ramp-capacity-5 = 
-ramp-capacity-6 = 
-ramp-capacity-7 = 
-ramp-capacity-8 = 
-ramp-capacity-9 = 
-
-ramp-capacity-0-foreground = ${colors.bad}
-ramp-capacity-1-foreground = ${colors.badish}
-ramp-capacity-2-foreground = ${colors.goodish}
-ramp-capacity-3-foreground = ${colors.good}
-ramp-capacity-4-foreground = ${colors.normal}
-ramp-capacity-5-foreground = ${colors.normal}
-ramp-capacity-6-foreground = ${colors.normal}
-ramp-capacity-7-foreground = ${colors.normal}
-ramp-capacity-8-foreground = ${colors.normal}
-ramp-capacity-9-foreground = ${colors.normal}
-
-label-unmounted = 
-label-unmounted-foreground = ${colors.bad} 
-; ---------------------------------------------------------------------------- ;
-[module/nvm2]
-type = internal/fs
-mount-0 = /var/lib/docker
 interval = 10
 
 ;format-mounted = <ramp-capacity>
@@ -202,12 +168,45 @@ ramp-capacity-9-foreground = ${colors.normal}
 label-unmounted = 
 label-unmounted-foreground = ${colors.bad} 
 ; ---------------------------------------------------------------------------- ;
+[module/home]
+type = internal/fs
+mount-0 = /home/user
+interval = 10
+
+;format-mounted = <ramp-capacity>
+format-mounted = <ramp-capacity> <label-mounted>
+label-mounted = %free:02%
+label-mounted-foreground = ${colors.normal}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+
+ramp-capacity-0-foreground = ${colors.bad}
+ramp-capacity-1-foreground = ${colors.badish}
+ramp-capacity-2-foreground = ${colors.goodish}
+ramp-capacity-3-foreground = ${colors.good}
+ramp-capacity-4-foreground = ${colors.normal}
+ramp-capacity-5-foreground = ${colors.normal}
+ramp-capacity-6-foreground = ${colors.normal}
+ramp-capacity-7-foreground = ${colors.normal}
+ramp-capacity-8-foreground = ${colors.normal}
+ramp-capacity-9-foreground = ${colors.normal}
+
+label-unmounted = 
+label-unmounted-foreground = ${colors.bad} 
+; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
 [module/cpu]
 type = internal/cpu
 interval = 1
-;format = <ramp-coreload>
 format = <ramp-coreload> <label>
 label = %percentage-sum:03%%
 label-foreground = ${colors.normal}
@@ -233,10 +232,8 @@ ramp-coreload-4-foreground = ${colors.bad}
 type = internal/memory
 interval = 10
 
-;format = <ramp-used>
 format = <ramp-used> <label>
-;label = %percentage_free:02%%
-label = %gb_free:02%
+label = %gb_free:02% (%percentage_free:02%%)
 label-foreground = ${colors.normal}
 
 ramp-used-0 = 
@@ -253,37 +250,6 @@ ramp-used-3-foreground = ${colors.normal}
 ramp-used-4-foreground = ${colors.normal}
 ramp-used-5-foreground = ${colors.normal}
 ramp-used-6-foreground = ${colors.good}
-ramp-used-7-freground = ${colors.goodish}
-ramp-used-8-foreground = ${colors.badish}
-ramp-used-9-foreground = ${colors.bad}
-; ---------------------------------------------------------------------------- ;
-[module/swap]
-type = internal/memory
-interval = 10
-
-;format = <ramp-used>
-format = <ramp-used> <label>
-label = %percentage_swap_free:02%%
-label-foreground = ${colors.normal}
-
-ramp-used-0 = 
-ramp-used-1 = 
-ramp-used-2 = 
-ramp-used-3 = 
-ramp-used-4 = 
-ramp-used-5 = 
-ramp-used-6 = 
-ramp-used-7 = 
-ramp-used-8 = 
-ramp-used-9 = 
-
-ramp-used-0-foreground = ${colors.normal}
-ramp-used-1-foreground = ${colors.normal}
-ramp-used-2-foreground = ${colors.normal}
-ramp-used-3-foreground = ${colors.normal}
-ramp-used-4-foreground = ${colors.normal}
-ramp-used-5-foreground = ${colors.good}
-ramp-used-6-foreground = ${colors.goodish}
 ramp-used-7-foreground = ${colors.goodish}
 ramp-used-8-foreground = ${colors.badish}
 ramp-used-9-foreground = ${colors.bad}
@@ -309,7 +275,6 @@ interval = 10
 label = %output%
 format-foreground = ${colors.normal}
 format-prefix = " "
-
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
@@ -326,25 +291,8 @@ label-muted-foreground = ${colors.bad}
 
 ramp-volume-0 = 
 ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-3 = 
-ramp-volume-4 = 
+ramp-volume-2 = 
 
-ramp-volume-0-foreground = ${colors.normal}
-ramp-volume-1-foreground = ${colors.good}
-ramp-volume-2-foreground = ${colors.goodish}
-ramp-volume-3-foreground = ${colors.badish}
-ramp-volume-4-foreground = ${colors.bad}
-
-click-right = pavucontrol
-; ---------------------------------------------------------------------------- ;
-
-; ---------------------------------------------------------------------------- ;
-[module/mic]
-type=custom/script
-exec = $HOME/.config/polybar/mic_status.sh
-interval = 1
-click-left = pamixer --default-source -t
 click-right = pavucontrol
 ; ---------------------------------------------------------------------------- ;
 
@@ -361,11 +309,9 @@ label-full = 
 label-full-foreground = ${colors.normal}
 
 format-charging = (+ <label-charging>) <ramp-capacity>
-#format-charging = <ramp-capacity>
 label-charging = %time%
 
 format-discharging = (- <label-discharging>) <ramp-capacity>
-#format-discharging = <ramp-capacity>
 label-discharging = %time%
 
 ramp-capacity-0 = 
@@ -411,44 +357,6 @@ ramp-2-foreground = ${colors.goodish}
 ramp-3-foreground = ${colors.badish}
 ramp-4-foreground = ${colors.badish}
 ramp-5-foreground = ${colors.bad}
-; ---------------------------------------------------------------------------- ;
-
-; ---------------------------------------------------------------------------- ;
-; network
-; ---------------------------------------------------------------------------- ;
-[module/eth]
-type = internal/network
-interface = enp1s0
-
-format-connected = <label-connected>
-label-connected =  
-label-connected-foreground = ${colors.good}
-
-format-disconnected = <label-disconnected>
-label-disconnected =  
-label-disconnected-foreground = ${colors.bad}
-; ---------------------------------------------------------------------------- ;
-[module/wifi]
-type = internal/network
-interface = wlo1
-interval = 1
-
-format-connected = <ramp-signal>
-ramp-signal-0 =  
-ramp-signal-1 =  
-ramp-signal-2 =  
-ramp-signal-3 =  
-ramp-signal-4 =  
-
-ramp-signal-0-foreground = ${colors.bad}
-ramp-signal-1-foreground = ${colors.badish}
-ramp-signal-2-foreground = ${colors.goodish}
-ramp-signal-3-foreground = ${colors.good}
-ramp-signal-4-foreground = ${colors.good}
-
-format-disconnected = <label-disconnected>
-label-disconnected =  
-label-disconnected-foreground = ${colors.bad}
 ; ---------------------------------------------------------------------------- ;
 
 ; ---------------------------------------------------------------------------- ;
